@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articleOne={
-  title:'Article One',
+  title:'Article One | Tatsuya Shiba',
   heading:'Article One',
   date:'11th Aug 2017',
   content:`
@@ -18,6 +18,40 @@ var articleOne={
           </p>
           <p>
           This is article one 
+          </p>
+  
+          `
+};
+var articleTwo={
+  title:'Article Two | Tatsuya Shiba',
+  heading:'Article Two',
+  date:'13th Aug 2017',
+  content:`
+          <p>
+          This is article two. 
+          </p>
+          <p>
+          This is article two. 
+          </p>
+          <p>
+          This is article two. 
+          </p>
+  
+          `
+};
+var articleThree={
+  title:'Article Three | Tatsuya Shiba',
+  heading:'Article Three',
+  date:'15th Aug 2017',
+  content:`
+          <p>
+          This is article three.
+          </p>
+          <p>
+          This is article three.
+          </p>
+          <p>
+          This is article three.
           </p>
   
           `
@@ -60,15 +94,15 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one',function (req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html')); 
+   res.send(createTemplate(articleOne)); 
 });
 
 app.get('/article-two',function (req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));    
+   res.send(createTemplate(articleTwo)); 
 });
 
 app.get('/article-three',function (req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
+   res.send(createTemplate(articleThree)); 
 });
 
 
