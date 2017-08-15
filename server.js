@@ -73,17 +73,17 @@ function createTemplate(data)
               
             </head>
             <body>
-                <div>
-                    <a href="/">Home</a>
-                </div>
-                <h3>${heading}</h3>
-                <div>
-                    ${date}
-                </div>
-                <div>
-                    ${content}
-                </div>
-                <div>
+                <div class="container">
+                    <div>
+                        <a href="/">Home</a>
+                    </div>
+                    <h3>${heading}</h3>
+                    <div>
+                        ${date}
+                    </div>
+                    <div>
+                        ${content}
+                    </div>
                 </div>
             </body>
         </html>`;
